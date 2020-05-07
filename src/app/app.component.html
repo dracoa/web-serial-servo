@@ -4,7 +4,7 @@
   <hr/>
   <div class="control" style="width: 600px; background-color: antiquewhite">
     <fieldset [disabled]="!connected">
-      <input type="number" min="1" max="9" [(ngModel)]="speed"/>
+      Speed (1 - 9): <input type="number" min="1" max="9" [(ngModel)]="speed"/>
       <button (mousedown)="move(-1)" (mouseup)="stop()">Move CCW</button>
       <button (mousedown)="move(1)" (mouseup)="stop()">Move CW</button>
       Running at: {{ cmd }} / Duration: {{ duration }}
