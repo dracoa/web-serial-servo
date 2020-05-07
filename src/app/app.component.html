@@ -7,8 +7,7 @@
       <input type="number" min="1" max="9" [(ngModel)]="speed"/>
       <button (mousedown)="move(-1)" (mouseup)="stop()">Move CCW</button>
       <button (mousedown)="move(1)" (mouseup)="stop()">Move CW</button>
-      <!--      Auto Stop: <input [(ngModel)]="autoStop" type="number"/>-->
-      {{ cmd }}
+      Running at: {{ cmd }} / Duration: {{ duration }}
     </fieldset>
   </div>
   <ng-container *ngIf="connected">

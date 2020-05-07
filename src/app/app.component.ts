@@ -12,6 +12,8 @@ export class AppComponent {
   supported = false;
   connected = false;
   output$: Observable<any>;
+  startTime: Date;
+  duration = 0;
   speed = 5;
   cmd = 90;
 
@@ -31,13 +33,13 @@ export class AppComponent {
 
   move(dir: number) {
     this.cmd = 90 - (dir * this.speed * 10);
-    console.log(this.cmd);
+    this.startTime = new Date();
     this.serial.send(`${this.cmd};`);
   }
 
   stop() {
     this.cmd = 90;
-    console.log(this.cmd);
+    this.duration = (new Date()).getTime() - this.startTime.getTime();
     this.serial.send(`${this.cmd};`);
   }
 
